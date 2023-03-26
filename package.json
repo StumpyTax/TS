@@ -4,6 +4,7 @@
   "description": "",
   "main": "1.5.js",
   "dependencies": {
+    "@types/node": "^18.15.7",
     "g": "^2.0.1",
     "typescript": "^5.0.2"
   },

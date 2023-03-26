@@ -13,6 +13,15 @@
         "isDefault": true
       },
       "label": "tsc: отслеживание — tsconfig.json"
+    },
+    {
+      "type": "typescript",
+      "tsconfig": "tsconfig.json",
+      "problemMatcher": [
+        "$tsc"
+      ],
+      "group": "build",
+      "label": "tsc: сборка — tsconfig.json"
     }
   ]
 }
