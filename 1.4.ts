@@ -1,10 +1,6 @@
 function reverseWords(a:string):string{
-  let strs:string[]=a.split(' ');
-  let res:string='';
-  strs.forEach(element => {
-    res+=' '+element.split('').reverse().join('');
-  });
-  return res;
+  return a.split(' ').map((e:string) =>
+  e.split('').reverse().join('')).join(' ');
 }
 
 console.log(reverseWords("Это пример!")); 
