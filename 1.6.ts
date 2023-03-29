@@ -1,15 +1,16 @@
 function digitalRoot(a:number):number{
-  while(~~(a/10)!=0){
-    let res:number=0;
-    let temp:number=a;
-    while(~~(temp/10)!=0){
-      res+=temp%10;
-      temp=~~(temp/10);
-    }
-    a=res+temp;
+  let minus:number=1
+  let b:number;
+  if(a>=0)
+    b=a;
+  else{
+    minus=-1;
+    b=-a;
   }
-
-  return a;
+  while(~~(b/10)!=0){
+    b=b.toString().split('').reduce((acc:number,x:string)=>acc+Number(x),0);
+  }
+  return minus*b;
 }
 
 console.log(digitalRoot(942));//?
