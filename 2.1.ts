@@ -1,11 +1,5 @@
-function arrayDif(a:Array<any>,b:Array<any>):Array<any>{
-  let res:Array<any>=new Array<any>();
-  for(let i=0;i<a.length;i++){
-    if(!b.some((c)=>c==a[i] && typeof(c)==typeof(a[i]))){
-      res.push(a[i])
-    }
-  }
-  return res;
+function arrayDif(a:any[],b:any[]):any[]{
+  return a.filter(x=>!b.includes(x));
 }
 
 console.log(arrayDif([1,2,6,7,8,1,1],[1,7]));

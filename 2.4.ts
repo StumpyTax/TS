@@ -1,22 +1,8 @@
 function capitalize(a:string):string{
-  let res:string="";
-  let sep:string[]=a.split(/[а-яА-ЯA-Za-zё]+/g);
-  let prevLet:boolean=true;
-  let words:string[]=a.split(/[^а-яА-ЯA-Za-zё]+/g).filter(x=>x);
+  let words:string[]=a.split(' ');
   if(a=='')
     return a
-
-  if(words[0].length<words.length){
-    words.splice(words[0].length,1);
-    sep.splice(words[0].length+1,1);
-  }
-  for(let i=0;i<words.length;i++){
-    res+=sep[i]+words[i].charAt(0).toUpperCase()+words[i].slice(1)
-  }
-  if(words.length<sep.length){
-    res+=sep.slice(words.length).join()
-  }
-  return res;
+  return words.map((x:string,index:number,array:string[])=>index!==array[0].length?x.charAt(0).toLocaleUpperCase()+x.slice(1):"").join(' ');
 }
 
 console.log(capitalize("Не волнуйтесь, если что-то не работает. Если бы всё работало, вас бы уволили"));

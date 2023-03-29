@@ -1,20 +1,6 @@
 function areEqual(a:object,b:object):boolean{
-  let aKeys:string[]=Object.getOwnPropertyNames(a);
-  let bKeys:string[]=Object.getOwnPropertyNames(b);
-  if(aKeys.length!=bKeys.length){
-    return false;
-  }
-  for(let i=0;i<aKeys.length;i++){
-    
-    if(((typeof(a[aKeys[i] as keyof object])==typeof(b[bKeys[i]as keyof object]) 
-      && typeof(a[aKeys[i]as keyof object])=="object") 
-      && !areEqual(a[aKeys[i]as keyof object],b[bKeys[i]as keyof object])) 
-      ||(!(typeof(a[aKeys[i] as keyof object])==typeof(b[bKeys[i] as keyof object]) 
-      && typeof(a[aKeys[i]as keyof object])=="object") 
-      && a[aKeys[i] as keyof object]!=b[bKeys[i] as keyof object])){
-        return false;
-      }
-  }
+  if(JSON.stringify(a)!==JSON.stringify(b))
+    return false
   return true;
 }
 type K={
